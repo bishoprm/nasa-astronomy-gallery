@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { getNASAPictures } from "./NasaAPI";
 
 function App() {
-  const [pictures, updatePictures] = React.useState(null);
-
+  const [pictures, updatePictures] = useState(null);
   useEffect(() => {
     if (!pictures) {
       const startDate = new Date("2020-07-01T08:28:41.917Z");
@@ -17,7 +16,10 @@ function App() {
 
   return (
     <div className="App">
-      {pictures && pictures.map((picture) => <div key={picture.date}>{picture.title}</div>)}
+      {pictures &&
+        pictures.map((picture) => (
+          <div key={picture.date}>{picture.title}</div>
+        ))}
     </div>
   );
 }

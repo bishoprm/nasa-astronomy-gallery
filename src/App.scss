@@ -1,0 +1,11 @@
+$primaryTextColor: #212121;
+$secondaryTextColor: #848484;
+$backgroundColor: #eff3f8;
+$cardBackground: #ffffff;
+$cardDateBackground: #735dd0;
+$font-stack: "Roboto", sans-serif;
+
+body {
+  background-color: $backgroundColor;
+  font-family: $font-stack;
+}

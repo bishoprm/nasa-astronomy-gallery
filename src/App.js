@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.scss";
 import { getNASAPictures } from "./NasaAPI";
+import ImageCard from "./components/ImageCard";
 
 function App() {
   const [pictures, updatePictures] = useState(null);
@@ -14,11 +15,15 @@ function App() {
     }
   }, [pictures]);
 
+  console.log(pictures);
+
   return (
-    <div className="App">
+    <div className="container">
       {pictures &&
         pictures.map((picture) => (
-          <div key={picture.date}>{picture.title}</div>
+          <div key={picture.date}>
+            {picture.media_type === "image" && <ImageCard {...picture} />}
+          </div>
         ))}
     </div>
   );

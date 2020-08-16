@@ -11,6 +11,24 @@ body {
   margin: 0;
 }
 
+header {
+  background-color: $cardDateBackground;
+  color: $backgroundColor;
+  padding: 1% 7%;
+
+  h1 {
+    font-weight: normal;
+  }
+}
+.selector {
+  background-color: $cardDateBackground;
+  color: $backgroundColor;
+  padding: 1% 7% 2%;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
 .container {
   display: flex;
   flex-flow: row wrap;

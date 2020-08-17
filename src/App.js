@@ -2,26 +2,26 @@ import React, { useEffect, useState } from "react";
 import "./App.scss";
 import { getNASAPictures } from "./NasaAPI";
 import ImageCard from "./components/ImageCard";
-import Selector from "./components/Selector";
+import SelectDate from "./components/SelectDate";
+import moment from "moment-timezone";
 
 function App() {
   const [pictures, updatePictures] = useState(null);
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(20);
 
+  // the API is set in EST so I used momentjs instead of the getDate method.
+  // Otherwise it will break if a user elsewhere uses it after midnight
   useEffect(() => {
-    if (!pictures) {
-      const startDate = new Date("2020-07-01T08:28:41.917Z");
-      const endDate = new Date();
-      getNASAPictures(startDate, endDate).then((res) => {
-        updatePictures(res);
-      });
-    }
-  }, [pictures]);
+    const startDate = moment.tz("America/New_York").subtract("days", date);
+    const endDate = moment.tz("America/New_York");
+    getNASAPictures(startDate, endDate).then((res) => {
+      updatePictures(res);
+    });
+  }, [date]);
 
   const handleChangeDate = (event) => {
     setDate(event.target.value);
   };
-  console.log("date", date);
 
   return (
     <div>
@@ -32,7 +32,7 @@ function App() {
           most recent photos!
         </p>
       </header>
-      <Selector handleChangeDate={handleChangeDate} />
+      <SelectDate handleChangeDate={handleChangeDate} />
       <div className="container">
         {pictures &&
           pictures.map((picture) => (

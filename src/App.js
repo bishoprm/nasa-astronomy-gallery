@@ -33,7 +33,7 @@ function App() {
       return picture;
     } else if (dateFilter === "lastWeek" && index >= 23) {
       return picture;
-    }
+    } else return null;
   });
 
   function displayPhotos() {

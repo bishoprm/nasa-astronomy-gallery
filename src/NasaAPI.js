@@ -2,9 +2,9 @@ const NASA_KEY = process.env.REACT_APP_API_KEY;
 
 // Expects a js Date, returns a string in YYYY-MM-DD format
 function transformDateForAPIRequest(date) {
-  let year = date.getFullYear();
-  let month = date.getMonth() + 1;
-  let day = date.getDate();
+  let year = date.year();
+  let month = date.month() + 1;
+  let day = date.date();
   if (month < 10) {
     month = `0${month}`;
   }

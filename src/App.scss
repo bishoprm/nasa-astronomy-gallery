@@ -11,12 +11,30 @@ body {
   margin: 0;
 }
 
+header {
+  background-color: $cardDateBackground;
+  color: $backgroundColor;
+  padding: 1% 7%;
+
+  h1 {
+    font-weight: normal;
+  }
+}
+.selector {
+  background-color: $cardDateBackground;
+  color: $backgroundColor;
+  padding: 1% 7% 2%;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
 .container {
   display: flex;
   flex-flow: row wrap;
   box-sizing: border-box;
-  height: 100vh;
   justify-content: center;
+  padding: 1% 2%;
 }
 
 .imageCard {
@@ -26,6 +44,11 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
   line-height: 0;
   border-radius: 5px;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+  }
 
   img {
     width: 100%;

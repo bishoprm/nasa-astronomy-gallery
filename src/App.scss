@@ -15,12 +15,26 @@ header {
   background-color: $cardDateBackground;
   color: $backgroundColor;
   padding: 1% 7%;
+}
 
-  h1 {
-    font-weight: normal;
+h2 {
+  padding: 3em;
+  color: $secondaryTextColor;
+  text-align: center;
+  font-size: 3em;
+  font-weight: emphasis;
+  animation: spin 2s linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
-.selector {
+.selectComponent {
   background-color: $cardDateBackground;
   color: $backgroundColor;
   padding: 1% 7% 2%;

@@ -29,7 +29,7 @@ function App() {
     // since only photos are rendered in this app and sometimes NASA posts videos
     if (dateFilter === "lastMonth") {
       return picture;
-    } else if (dateFilter === "lastTwoWeeks" && index >= 14) {
+    } else if (dateFilter === "lastTwoWeeks" && index >= 15) {
       return picture;
     } else if (dateFilter === "lastWeek" && index >= 23) {
       return picture;

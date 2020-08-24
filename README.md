@@ -1,3 +1,23 @@
+
+# NASA Astronomy Gallery
+
+Check it out: https://bishoprm-nasa-gallery.netlify.app/
+
+This frontend app uses the following:
+- React (with React Hooks)
+- HTML & CSS
+    * I wrote all CSS (involving flexbox and an understanding of the box model) in Sass ✨ (my first time really using Sass!)
+- Material-UI for the select component only
+- NASA's APOD API: https://api.nasa.gov/index.html
+    * This involved applying for a key which I hid in the .env. If you clone this repo make sure to create your own .env with your key in it.
+    * made one API request and then filtered the results to show images from the last week, the last two weeks, and the last month
+- used Moment.js to avoid time zone issues with the API request
+
+## thanks for looking! 🚀
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
